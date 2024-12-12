@@ -44,11 +44,11 @@ hold on;
 
 for l = 1:5                 % nombre de trajectoires à simuler/tracer
     [x10,x20] = ginput(1);  % récupération des conditions initiales pointées sur le graphique de la figure
-    Vtheta0 = ...;          % mise à jour des conditions initiales pour le simulink
-    dVtheta_dt0 = ...;
+    Vtheta0 = x10;          % mise à jour des conditions initiales pour le simulink
+    dVtheta_dt0 = -x20;
     simOut = sim('simTP1_2023a.slx');     % lancement simulation
-    x1 = ...;                           % récupération de l'état x1 et x2 simulés
-    x2 = ...;
+    x1 = simOut.simout.Data(:,1);         % x1 = V_theta_point - V_theta
+    x2 = simOut.simout.Data(:,2);         % x2 - -dV_theta
     plot(x1,x2,'LineWidth',2);          % mise à jour du portrait de phase
 
     drawnow
