@@ -60,8 +60,8 @@ hold on;
 
 for l = 1:5                 % nombre de trajectoires à simuler/tracer
     [x1_0,x2_0] = ginput(1);  % récupère les coordonnées (x,y) du point cliqué sur le graphique
-    Vtheta0 = x1_0;          % mise à jour des conditions initiales pour le simulink
-    dVtheta_dt0 = x2_0;
+    Vtheta0 = -x1_0;          % mise à jour des conditions initiales pour le simulink
+    dVtheta_dt0 = -x2_0;
     %disp([num2str(Vtheta0), " , " ,num2str(dVtheta_dt0)]);
     text = sprintf('(x1_0 ; x2_0) =  (%.3f ; %.3f)',x1_0,x2_0);
     disp(text);
