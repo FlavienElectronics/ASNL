@@ -31,12 +31,12 @@ title('Lieu de Nyquist de la FTBO');
 
 % Amplitudes admissibles pour le lieu critique
 A = linspace(Delta + 0.1, 10, 100); % A > Delta
-C_reel = ( -(A*pi) / (4*M) ) .* ( sqrt(1 - ( (Delta^2) ./ (4*A) )));
-C_imag = ( -(A*pi) / (4*M) ) .* (-Delta ./ (2*A) );      
+C_reel = ( -(A*pi)/(4*M) ) * (sqrt(1-((delta^2)/(4*A))));
+C_imag = (-(A*pi)/(4*M))*(-delta/(2*A));      
 
 % Superposition au graphe de Nyquist
 hold on;
-plot(C_reel, C_imag, 'r', 'LineWidth', 2);
+plot(C_real, C_imag, 'r', 'LineWidth', 2);
 legend('Lieu de Nyquist', 'Lieu critique');
 
 
