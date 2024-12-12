@@ -67,7 +67,9 @@ for l = 1:5                 % nombre de trajectoires à simuler/tracer
     disp(text);
     simOut = sim('simTP1_2023a.slx');     % lancement simulation
     x1 = simOut.get("x1");       % x1 = V_theta_point - V_theta
-    x2 = simOut.get("x2");         % x2 = -dV_theta
+    x2 = -simOut.get("x2");         % x2 = -dV_theta
+    %x1 = simOut.simout.Data(:,1); % x1 = erreur
+    %x2 = simOut.simout.Data(:,2); % x2 = accélération
     plot(x1,x2,'LineWidth',2);          % mise à jour du portrait de phase
 
     drawnow
